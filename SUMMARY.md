@@ -1,0 +1,45 @@
+# Summary
+
+### 手边命令
+* [常用](README.md)
+  * [awk](handy/awk.md)
+  * [sed](handy/sed.md)
+  * [grep](handy/grep.md)
+  * [find](handy/find.md)
+  * [脚本](handy/shell-script.md)
+* [CVS](README.md)
+  * [git](handy/git.md)
+  * [svn](handy/svn.md)
+* [杂项](README.md)
+  * [tmux](handy/tmux.md)
+  * [ubnutu](handy/setup-ubuntu.md)
+
+### 笔记
+* [左耳听风：成长](note/haozi/0.md)
+* [左耳听风：经验之谈](note/haozi/1.md)
+* [左耳听风：分布式系统架构的本质](note/haozi/2.md)
+* [左耳听风：编程范式游记](note/haozi/3.md)
+* [左耳听风：分布式系统设计模式](note/haozi/4.md)
+* [左耳听风：程序员练级攻略](note/haozi/5.md)
+* [如何学计算机专业英语](note/how-to-learn-cs-english.md)
+
+### 文章
+* [导言](README.md)
+* [cpp](cpp/README.md)
+  * [datetime函数](cpp/datetime.md)
+  * [C++0x std::thread](cpp/thread.md)
+  * [C++0x学习之简洁语法](cpp/note-on-c++0x-simplify-grammar.md)
+  * [C++0x 学习之类、函数](cpp/note-on-c++0x-type-deduction.md)
+  * [GTest示例](cpp/gtest-template.md)
+  * [一次 C++ vector 的误用](cpp/c++-vector.md)
+  * [从CAS到内嵌汇编](cpp/gcc-inline-assembly.md)
+  * [Tuxedo性能调优之使用gprof](cpp/tuxedo-tuning-with-gprof.md)
+* [linux](linux/README.md)
+  * [bash 里面的引号](linux/quote-marks-in-bash.md)
+  * [删除 Linux 中的 ^M](linux/delete-carriage-return.md)
+  * [Linux Core 基础](linux/linux-core.md)
+  * [Linux 计划任务 crontab](linux/crontab.md)
+  * [如何证明fork用了COW](linux/fork-cow.md)
+  * [Linux 自旋锁 spinlock 的使用](linux/splinlock.md)
+  * [谁偷了你的磁盘](linux/who-stolen-ur-disk.md)
+

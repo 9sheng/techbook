@@ -1,0 +1,56 @@
+{
+    "title": "My TechBook",
+    "description": "好记性不如烂笔头",
+    "author": "9sheng",
+    "output.name": "site",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "root": ".",
+    "structure": {
+        "readme": "README.md"
+    },
+    "links": {
+        "sidebar": {
+            "Home": "http://9sheng.github.io"
+        }
+    },
+    "plugins": [
+        "-lunr",
+        "-search",
+        "-highlight",
+        "-livereload",
+        "include-codeblock",
+        "ace",
+        "prism",
+        "prism-themes",
+        "splitter",
+        "search-plus",
+        "sectionx",
+        "tbfed-pagefooter",
+        "toggle-chapters"
+    ],
+
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "prism": {
+            "css": [
+                "prismjs/themes/prism-solarizedlight.css"
+            ]
+        },
+       "include-codeblock": {
+            "template": "ace",
+            "unindent": true,
+            "edit": true
+        },
+       "tbfed-pagefooter": {
+            "copyright": "Copyright &copy Richie",
+            "modify_label": "文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "sectionx": {
+            "tag": "b"
+        }
+    }
+}
