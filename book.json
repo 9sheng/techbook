@@ -10,9 +10,6 @@
         "readme": "README.md"
     },
     "links": {
-        "sidebar": {
-            "Home": "http://9sheng.github.io"
-        }
     },
     "plugins": [
         "-lunr",
@@ -36,7 +33,7 @@
         },
         "prism": {
             "css": [
-                "prismjs/themes/prism-solarizedlight.css"
+                "prismjs/themes/prism-tomorrow.css"
             ]
         },
        "include-codeblock": {
@@ -45,7 +42,7 @@
             "edit": true
         },
        "tbfed-pagefooter": {
-            "copyright": "Copyright &copy Richie",
+            "copyright": "Copyright &copy 9sheng",
             "modify_label": "文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
