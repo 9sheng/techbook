@@ -24,12 +24,12 @@
 * [如何学计算机专业英语](note/how-to-learn-cs-english.md)
 
 ### 文章
-* [导言](README.md)
 * [cpp](cpp/README.md)
   * [datetime函数](cpp/datetime.md)
   * [C++0x std::thread](cpp/thread.md)
   * [C++0x学习之简洁语法](cpp/note-on-c++0x-simplify-grammar.md)
   * [C++0x 学习之类、函数](cpp/note-on-c++0x-type-deduction.md)
+  * [google c++代码规范分享](cpp/google-c++-note.md)
   * [GTest示例](cpp/gtest-template.md)
   * [一次 C++ vector 的误用](cpp/c++-vector.md)
   * [从CAS到内嵌汇编](cpp/gcc-inline-assembly.md)
@@ -43,3 +43,4 @@
   * [Linux 自旋锁 spinlock 的使用](linux/splinlock.md)
   * [谁偷了你的磁盘](linux/who-stolen-ur-disk.md)
 
+* [导言](README.md)
