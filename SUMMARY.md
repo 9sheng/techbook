@@ -36,6 +36,7 @@
   * [从CAS到内嵌汇编](cpp/gcc-inline-assembly.md)
   * [Tuxedo性能调优之使用gprof](cpp/tuxedo-tuning-with-gprof.md)
 * [linux](linux/README.md)
+  * [关于IO的基本概念](linux/about_io.md)
   * [bash 里面的引号](linux/quote-marks-in-bash.md)
   * [删除 Linux 中的 ^M](linux/delete-carriage-return.md)
   * [Linux Core 基础](linux/linux-core.md)
