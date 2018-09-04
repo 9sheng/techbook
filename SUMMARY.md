@@ -22,6 +22,7 @@
   * [左耳听风：编程范式游记](note/haozi/3.md)
   * [左耳听风：分布式系统设计模式](note/haozi/4.md)
   * [左耳听风：程序员练级攻略](note/haozi/5.md)
+* [optimizing cpp笔记](note/optimizing_cpp.md)
 * [如何学计算机专业英语](note/how-to-learn-cs-english.md)
 
 ### 文章
