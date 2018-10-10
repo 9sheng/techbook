@@ -28,7 +28,7 @@ class ThreadSafeQueue {
     // data_cond_.notify_one 唤醒的
     std::unique_lock<std::mutex> lk(mut_);
     data_cond_.wait(lk, [this]{return !data_queue_.empty();});
-    ,*value = std::move(data_queue_.front());
+    *value = std::move(data_queue_.front());
     data_queue_.pop();
   }
 
