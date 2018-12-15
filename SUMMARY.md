@@ -16,16 +16,17 @@
 
 ### 笔记
 * [左耳听风](README.md)
-  * [左耳听风：成长](note/haozi/0.md)
-  * [左耳听风：经验之谈](note/haozi/1.md)
-  * [左耳听风：分布式系统架构的本质](note/haozi/2.md)
-  * [左耳听风：编程范式游记](note/haozi/3.md)
-  * [左耳听风：分布式系统设计模式](note/haozi/4.md)
-  * [左耳听风：程序员练级攻略](note/haozi/5.md)
-  * [左耳听风：高效学习](note/haozi/6.md)
-  * [左耳听风：高效沟通](note/haozi/7.md)
+  * [成长](note/haozi/0.md)
+  * [经验之谈](note/haozi/1.md)
+  * [分布式系统架构的本质](note/haozi/2.md)
+  * [编程范式游记](note/haozi/3.md)
+  * [分布式系统设计模式](note/haozi/4.md)
+  * [程序员练级攻略](note/haozi/5.md)
+  * [高效学习](note/haozi/6.md)
+  * [高效沟通](note/haozi/7.md)
 * [optimizing cpp笔记](note/optimizing_cpp.md)
 * [如何学计算机专业英语](note/how-to-learn-cs-english.md)
+* [Markdown简明语法](note/markdown-grammar.md)
 
 ### 文章
 * [cpp](cpp/README.md)
