@@ -15,6 +15,7 @@
   * [kube](handy/kube.md)
   * [docker](handy/docker.md)
 * [杂项](SUMMARY.md)
+  * [小知识点](handy/useful-snippets.md)
   * [rpm](handy/rpm.md)
   * [tmux](handy/tmux.md)
   * [脚本](handy/shell-script.md)
@@ -55,7 +56,6 @@
   * [如何证明fork用了COW](linux/fork-cow.md)
   * [Linux 自旋锁 spinlock 的使用](linux/splinlock.md)
   * [谁偷了你的磁盘](linux/who-stolen-ur-disk.md)
-  * [小知识点](linux/useful-snippets.md)
 
 ### 附录
 * [说明](README.md)

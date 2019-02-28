@@ -33,7 +33,7 @@
         },
         "prism": {
             "css": [
-                "prismjs/themes/prism-tomorrow.css"
+                "prismjs/themes/prism-solarizedlight.css"
             ]
         },
        "include-codeblock": {
