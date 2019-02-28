@@ -1,14 +1,15 @@
 # git 使用小结
 
+## 一般流程
 假设需要开发某个功能，或者 fix 某个 bug，详细如下： 
 
-## 1.更新代码
+1.更新代码
 在做所有开发工作之前，先把本地代码和 git repos 同步最新：
 ```sh  
 git pull
 ```
 
-## 2. 修改代码
+2.修改代码
 本地 coding, coding 过程中，可能会有多次本地 commit，比如说， coding balabalabala，然后：
 ```sh
 git add . 
@@ -20,7 +21,7 @@ git add .
 git commit 
 ```
   
-## 3.提交代码
+3.提交代码
 假设 coding 完成，需要把本地代码推送到远端 git repos，在推送之前，一定做如下动作： 
 ```sh
 git pull --rebase 
@@ -49,38 +50,56 @@ git rebase --continue
 ```sh
 git push
 ```
-## 其他
-### 创建新仓库
 
+## 有用的命令
+
+### 创建新仓库
 ```sh
 git init
 ```
-### 检出仓库
 
+检出仓库
 ```sh
 git clone /path/to/repository # 本地仓库 
 git clone username@host:/path/to/repository #远程仓库
 ```
 
-### 推送改动
+### 远端
+```sh
+git remote -v # 查看远端
+git remote set-url origin http://sogou.git # 设置远程源
+git push -u origin master # 推本地分支到远端
+# 拉取远程分支
+git checkout -b v0.0.1 remotes/origin/v0.0.1
+git checkout -t origin/v0.0.1
+```
+
+
 如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：
 ```sh
 git remote add origin <server>
 git push origin master
 ```
 
-### git 同步父流更新
+git 同步父流更新
 ```sh
 git remote add upstream https://github.com/被fork的仓库.git
 git fetch upstream
 git merge upstream/master
 ```
 
+强制推送本地库到服务器
+```sh
+git push origin HEAD --force
+```
+
 ### 标签
 ```sh
-git tag 1.0.0 1b2e1d63ff
+git tag # 查看标签
+git tag -a v1.1.0 084ac46 # 增加标签
+git show v1.1.0 # 查看标签
+git push origin v1.1.0 # 推到远端
 ```
-1b2e1d63ff 是你想要标记的提交 ID 的前 10 位字符。使用如下命令获取提交 ID：`git log`。你也可以用该提交 ID 的少一些的前几位，只要它是唯一的。
 
 ### 打包导出
 ```sh
@@ -88,38 +107,49 @@ git archive --format zip -o site-$(git log --pretty=format:"%h" -1).zip HEAD
 git archive v0.1 | gzip > site.tgz
 ```
 
-### 还原修改
-假如你做错事，可以使用如下命令替换掉本地改动：
+### 彩色显示
 ```sh
-git checkout -- <filename>
+git config --global color.status auto
+git config --global color.diff auto
+git config --global color.branch auto
+git config --global color.interactive auto
 ```
 
-此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到缓存区的改动，以及新文件，都不受影响。
+### 非交互式
+```sh
+git config --global pager.branch false
+# git diff using no pager
+git config --global --replace-all core.pager "less -F -X"
+```
+
+### 恢复修改
+本地修改了许多文件，其中有些是新增的，因为开发需要这些都不要了，想要丢弃掉，可以使用如下命令：
+```sh
+git checkout .  # 本地所有修改的文件，没有的提交的，都返回到原来的状态
+git checkout -- <filename>
+git stash # 把所有没有提交的修改暂存到stash里面。可用git stash pop恢复
+git reset --hard HASH # 返回到某个节点，不保留修改
+git reset --soft HASH # 返回到某个节点。保留修改
+git clean -df # 返回到某个节点，-n 显示将要删除的文件和目录，-f 删除文件，-df 删除文件和目录
+```
+
+缓存修改
+修改了一些东西，想切换到另一个分支：
+```sh
+git stash # 保存工作 
+git stash list # 查看 
+git stash apply # 恢复stash ，默认stash@{0} 
+git stash apply stash@{2}
+```
+
 假如你想要丢弃你所有的本地改动与提交，可以到服务器上获取最新的版本并将你本地主分支指向到它：
 ```sh
 git fetch origin
 git reset --hard origin/master
 ```
 
-### 强制推送本地库到服务器
+### cherry pick 
+当执行完 cherry-pick 以后，将会生成一个新的提交；这个新的提交的哈希值和原来的不同，但标识名一样；
 ```sh
-git push origin HEAD --force
-```
-
-### 有用的贴士
-内建的图形化 git：
-```sh
-gitk
-```
-彩色的 git 输出：
-```sh
-git config color.ui true
-```
-显示历史记录时，只显示一行注释信息：
-```sh
-git config format.pretty oneline
-```
-交互地添加文件至缓存区：
-```sh
-git add -i
+git cherry-pick 38361a55 
 ```

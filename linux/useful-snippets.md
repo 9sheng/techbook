@@ -1,0 +1,5 @@
+- 随机端口范围：`cat /proc/sys/net/ipv4/ip_local_port_range`
+- cpu 查看
+  - 物理cpu个数 `grep "physical id" /proc/cpuinfo | sort -u | wc -l`
+  - 核心数量 `grep "core id" /proc/cpuinfo | sort -u | wc -l`
+  - 逻辑cpu数量 `grep "processor" /proc/cpuinfo | sort -u | wc -l`
