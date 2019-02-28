@@ -1,4 +1,5 @@
 _book
 node_modules
 *.temp
+nohup.out
 
