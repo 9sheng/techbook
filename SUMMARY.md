@@ -1,26 +1,27 @@
 # Summary
 
 ### 手边命令
-* [shell常用](handy/README.md)
+* [shell常用](SUMMARY.md)
   * [awk](handy/awk.md)
   * [sed](handy/sed.md)
   * [grep](handy/grep.md)
   * [find](handy/find.md)
   * [git](handy/git.md)
   * [svn](handy/svn.md)
-  * [rpm](handy/rpm.md)
-* [常用组件](handy/README.md)
+* [常用组件](SUMMARY.md)
   * [ceph](handy/ceph.md)
   * [kafka](handy/kafka.md)
   * [mysql](handy/mysql.md)
   * [kube](handy/kube.md)
   * [docker](handy/docker.md)
+* [杂项](SUMMARY.md)
+  * [rpm](handy/rpm.md)
   * [tmux](handy/tmux.md)
-* [杂项](handy/README.md)
   * [脚本](handy/shell-script.md)
   * [setup ubnutu](handy/setup-ubuntu.md)
+
 ### 笔记
-* [左耳听风](README.md)
+* [左耳听风](SUMMARY.md)
   * [成长](note/haozi/0.md)
   * [经验之谈](note/haozi/1.md)
   * [分布式系统架构的本质](note/haozi/2.md)
@@ -35,7 +36,7 @@
 * [Markdown简明语法](note/markdown-grammar.md)
 
 ### 文章
-* [cpp](cpp/README.md)
+* [cpp](SUMMARY.md)
   * [datetime函数](cpp/datetime.md)
   * [C++0x std::thread](cpp/thread.md)
   * [C++0x学习之简洁语法](cpp/note-on-c++0x-simplify-grammar.md)
@@ -45,7 +46,7 @@
   * [一次 C++ vector 的误用](cpp/c++-vector.md)
   * [从CAS到内嵌汇编](cpp/gcc-inline-assembly.md)
   * [Tuxedo性能调优之使用gprof](cpp/tuxedo-tuning-with-gprof.md)
-* [linux](linux/README.md)
+* [linux](SUMMARY.md)
   * [关于IO的基本概念](linux/about_io.md)
   * [bash 里面的引号](linux/quote-marks-in-bash.md)
   * [删除 Linux 中的 ^M](linux/delete-carriage-return.md)
@@ -55,3 +56,6 @@
   * [Linux 自旋锁 spinlock 的使用](linux/splinlock.md)
   * [谁偷了你的磁盘](linux/who-stolen-ur-disk.md)
   * [小知识点](linux/useful-snippets.md)
+
+### 附录
+* [说明](README.md)
