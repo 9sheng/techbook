@@ -1,7 +1,7 @@
 # Summary
 
 ### 手边命令
-* [常用](README.md)
+* [shell常用](handy/README.md)
   * [awk](handy/awk.md)
   * [sed](handy/sed.md)
   * [grep](handy/grep.md)
@@ -9,13 +9,14 @@
   * [git](handy/git.md)
   * [svn](handy/svn.md)
   * [rpm](handy/rpm.md)
+* [常用组件](handy/README.md)
   * [ceph](handy/ceph.md)
   * [kafka](handy/kafka.md)
   * [mysql](handy/mysql.md)
   * [kube](handy/kube.md)
   * [docker](handy/docker.md)
   * [tmux](handy/tmux.md)
-* [杂项](README.md)
+* [杂项](handy/README.md)
   * [脚本](handy/shell-script.md)
   * [setup ubnutu](handy/setup-ubuntu.md)
 ### 笔记
