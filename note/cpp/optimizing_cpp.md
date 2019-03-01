@@ -63,4 +63,4 @@ struct Slongdouble {
 }; 
 ```
 
-![image](../images/3c94a4ff-0c28-4986-9e79-70aaa4a88348.jpg)
+![image](../../images/3c94a4ff-0c28-4986-9e79-70aaa4a88348.jpg)
