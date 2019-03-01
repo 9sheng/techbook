@@ -33,6 +33,9 @@
   * [高效沟通](note/haozi/7.md)
 * [cpp](note/cpp/README.md)
   * [optimizing cpp笔记](note/cpp/optimizing_cpp.md)
+  * [datetime函数](note/cpp/datetime.md)
+  * [std::thread](note/cpp/thread.md)
+  * [gtest示例](note/cpp/gtest-template.md)
 * [redis](note/redis/README.md)
   * [Redis内存管理](note/redis/redis-memory.md)
 * [杂项](note/misc/README.md)
@@ -41,12 +44,9 @@
 
 ### 文章
 * [cpp](blog/cpp/README.md)
-  * [datetime函数](blog/cpp/datetime.md)
-  * [C++0x std::thread](blog/cpp/thread.md)
   * [C++0x学习之简洁语法](blog/cpp/note-on-c++0x-simplify-grammar.md)
   * [C++0x 学习之类、函数](blog/cpp/note-on-c++0x-type-deduction.md)
   * [google c++代码规范分享](blog/cpp/google-c++-note.md)
-  * [GTest示例](blog/cpp/gtest-template.md)
   * [一次 C++ vector 的误用](blog/cpp/c++-vector.md)
   * [从CAS到内嵌汇编](blog/cpp/gcc-inline-assembly.md)
   * [Tuxedo性能调优之使用gprof](blog/cpp/tuxedo-tuning-with-gprof.md)
