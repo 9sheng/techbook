@@ -8,12 +8,14 @@ kubectl patch authorizationactions -p '{"metadata":{"finalizers":[]}}'
 
 查询特定的 event
 ```sh
-kubectl get event -n base --field-selector involvedObject.kind=AuthorizationAction -owide
+kubectl get event -n base -owide \
+  --field-selector involvedObject.kind=AuthorizationAction
 ```
 
 查询 ownerReferences
 ```sh
-kubectl get rs -o=jsonpath="{range .items[*]}{.metadata.namespace} {.metadata.name} {.metadata.ownerReferences[0].name}{'\n'}{end}"
+kubectl get rs -o=jsonpath="{range .items[*]}{.metadata.namespace} \
+  {.metadata.name} {.metadata.ownerReferences[0].name}{'\n'}{end}"
 ```
 
 标记节点unschedulable，并会驱逐节点上的pods
@@ -33,7 +35,7 @@ kubectl uncordon $NODE
 
 ```sh
 kubectl get pods -n xuri --sort-by=.status.startTime
-kubectl get pods -n iflow -o wide --selector=app=docker-iflow-admin-11120-label
+kubectl get pods -n iflow -o wide --selector=app=admin-label
 
 kubectl label node 10.152.82.24 zoon=z3
 kubectl label node 10.152.88.106 pool-

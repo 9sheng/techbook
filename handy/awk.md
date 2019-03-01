@@ -56,7 +56,8 @@ awk 'length>80' file
 # 按连接数查看客户端 IP
 netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr
 # 打印 99 乘法表
-seq 9 | sed 'H;g' | awk -v RS='' '{for(i=1;i<=NF;i++)printf("%dx%d=%d%s", i, NR, i*NR, i==NR?"\n":"\t")}'
+seq 9 | sed 'H;g' | awk -v RS='' \
+  '{for(i=1;i<=NF;i++)printf("%dx%d=%d%s", i, NR, i*NR, i==NR?"\n":"\t")}'
 ```
 
 ## 内建变量

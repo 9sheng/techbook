@@ -16,7 +16,8 @@ sudo apt-add-repository ppa:fcitx-team/nightly # for sogou-input
 sudo apt-get update
 sudo apt-get upgrade -y
 
-PKG_TO_INSTALL=(build-essential cgdb cmake curl emacs fcitx git golang-go htop ipython kcachegrind kdiff3 subversion terminator tmux vim zsh)
+PKG_TO_INSTALL=(build-essential cgdb cmake curl emacs fcitx git golang-go \
+  htop ipython kcachegrind kdiff3 subversion terminator tmux vim zsh)
 for pkg in ${PKG_TO_INSTALL[@]}; do
   echo sudo apt-get install -y $pkg
 done
@@ -57,7 +58,8 @@ EOF
 chsh -s $(which zsh)
 
 # ==== config svn ====
-sed -i -e 's/# merge-tool-cmd =.*/merge-tool-cmd = svn-kdiff3-merge.sh/' -e 's/# diff-cmd =.*/diff-cmd = svn-kdiff3.sh/' ~/.subversion/config
+sed -i -e 's/# merge-tool-cmd =.*/merge-tool-cmd = svn-kdiff3-merge.sh/' \
+-e 's/# diff-cmd =.*/diff-cmd = svn-kdiff3.sh/' ~/.subversion/config
 
 # ==== install go tools ====
 go install github.com/rogpeppe/godef

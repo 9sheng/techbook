@@ -6,7 +6,7 @@ docker exec -it containerid bash
 docker run -p ip:hostPort:containerPort --env TERM='xterm' redis
 
 docker build --pull --tag ${TAG} ./
-docker push ${TAG} 
+docker push ${TAG}
 ```
 
 ## enlarge docker pool
