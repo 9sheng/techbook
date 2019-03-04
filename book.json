@@ -33,7 +33,7 @@
         },
         "prism": {
             "css": [
-                "prismjs/themes/prism-tomorrow.css"
+                "prism-themes/themes/prism-hopscotch.css"
             ]
         },
        "include-codeblock": {
