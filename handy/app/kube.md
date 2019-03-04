@@ -1,9 +1,15 @@
 # kubectl 常用命令
 
-
-去除 finalizers
+## pod 操作
 ```sh
-kubectl patch authorizationactions -p '{"metadata":{"finalizers":[]}}'
+kubectl get pods -n test --sort-by=.status.startTime
+kubectl get pods -n test -o wide --selector=app=admin-label
+kubectl exec -n test pod-web2wfc9 -c con-web-init -it sh
+```
+
+扩容操作
+```sh
+kubectl scale sts mysql-local --replicas=2
 ```
 
 查询特定的 event
@@ -12,12 +18,13 @@ kubectl get event -n base -owide \
   --field-selector involvedObject.kind=AuthorizationAction
 ```
 
-查询 ownerReferences
+标签操作
 ```sh
-kubectl get rs -o=jsonpath="{range .items[*]}{.metadata.namespace} \
-  {.metadata.name} {.metadata.ownerReferences[0].name}{'\n'}{end}"
+kubectl label node 10.152.82.24 zoon=z3
+kubectl label node 10.152.88.106 pool-
 ```
 
+## 节点管理
 标记节点unschedulable，并会驱逐节点上的pods
 ```sh
 kubectl drain $NODE
@@ -33,15 +40,16 @@ kubectl cordon $NODE
 kubectl uncordon $NODE
 ```
 
+## jsonpath
+https://kubernetes.io/docs/reference/kubectl/jsonpath/
+
+去除 finalizers
 ```sh
-kubectl get pods -n xuri --sort-by=.status.startTime
-kubectl get pods -n iflow -o wide --selector=app=admin-label
-
-kubectl label node 10.152.82.24 zoon=z3
-kubectl label node 10.152.88.106 pool-
-
-kubectl scale sts mysql-local --replicas=2
-kubectl exec bizsupervisor-web2wfc9 -n base -c bizsupervisor-web-init -it sh
+kubectl patch authorizationactions -p '{"metadata":{"finalizers":[]}}'
 ```
 
-https://kubernetes.io/docs/reference/kubectl/jsonpath/
+查询 ownerReferences
+```sh
+kubectl get rs -o=jsonpath="{range .items[*]}{.metadata.namespace} \
+  {.metadata.name} {.metadata.ownerReferences[0].name}{'\n'}{end}"
+```
