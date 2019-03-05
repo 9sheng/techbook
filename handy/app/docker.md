@@ -12,12 +12,11 @@ docker push ${TAG}
 ## enlarge docker pool
 
 ```sh
-#!/bin/bash
 set -euo pipefail
 
 SIZE=200 #GB
 
-# Chagne file size.
+# Change file size
 datafile=$(docker info | grep 'Data loop file' | awk '{print $NF}')
 ls -lh $datafile
 secnum=$(echo "$SIZE * 1024 * 1024 * 1024" | bc)
@@ -31,9 +30,18 @@ blockdev --getsize64 /dev/loop0
 
 poolname=$(dmsetup status | grep pool | awk -F': ' '{print $1}')
 poolinfo=$(dmsetup table $poolname)
-newpoolinfo=$(echo $poolinfo | awk -v s=$SIZE '{for (i=1;i<NF;i++){if (i==2) printf("%d ", s*1024*1024*1024/512); else printf("%s ", $i);} printf("%s", $NF)}')
-echo $poolinfo
-echo $newpoolinfo
+newpoolinfo=$(echo $poolinfo | awk -v s=$SIZE '{
+  for (i=1;i<NF;i++) {
+    if (i==2)
+      printf("%d ", s*1024*1024*1024/512);
+    else
+      printf("%s ", $i);
+  }
+  printf("%s", $NF)
+}')
+
+echo "Pool Info: $poolinfo"
+echo "New Pool Info: $newpoolinfo"
 
 dmsetup suspend "$poolname"
 dmsetup reload "$poolname" --table "$newpoolinfo"

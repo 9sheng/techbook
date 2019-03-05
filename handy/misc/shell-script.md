@@ -30,7 +30,7 @@
 
 ## 脚本路径
 ```sh
-echo "scriptPath1: " $(cd `dirname $0`; pwd)
+echo "scriptPath1: " $(cd `dirname $0`; pwd -P)
 echo "scriptPath2: " $(dirname $(readlink -f $0))
 ```
 

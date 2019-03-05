@@ -81,5 +81,4 @@ radosgw-admin zone set --rgw-zone=default --infile ${user}.zone.json
 
 # 4. 更新 zone
 radosgw-admin zonegroup add --rgw-zonegroup=default --rgw-zone=default
-线上环境op已创建fe.ceph用户及授权（使用的默认default）
 ```
