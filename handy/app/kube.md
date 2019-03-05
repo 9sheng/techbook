@@ -1,6 +1,6 @@
 # kubectl 常用命令
 
-## pod 操作
+pod 操作
 ```sh
 kubectl get pods -n test --sort-by=.status.startTime
 kubectl get pods -n test -o wide --selector=app=admin-label
@@ -12,7 +12,7 @@ kubectl exec -n test pod-web2wfc9 -c con-web-init -it sh
 kubectl scale sts mysql-local --replicas=2
 ```
 
-查询特定的 event
+查询特定event
 ```sh
 kubectl get event -n base -owide \
   --field-selector involvedObject.kind=AuthorizationAction

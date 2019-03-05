@@ -27,7 +27,7 @@ sudo ceph-deploy osd activate \
 systemctl restart ceph-osd@1
 ```
 
-## incomplete 修复
+## 修复 incomplete pg
 ```sh
 # 查看 pg 的osd 分布
 ceph pg map 5.24

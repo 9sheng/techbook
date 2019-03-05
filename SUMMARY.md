@@ -34,6 +34,8 @@
   * [go面试题](note/go/go-interview.md)
 * [redis](note/redis/README.md)
   * [Redis内存管理](note/redis/redis-memory.md)
+* [ceph](note/ceph/README.md)
+  * [Ceph基础](note/ceph/introduction-to-ceph.md)
 * [网络](note/net/README.md)
   * [TCP小结](note/net/about-tcp.md)
 * [杂项](note/misc/README.md)
