@@ -4,9 +4,9 @@
 
 目录在[这里](SUMMARY.md)
 
-run with image `https://hub.docker.com/r/billryan/gitbook/`
-
+运行：
 ```sh
-docker run -d -v "$PWD:/gitbook" -p 4000:4000 --name gitbook billryan/gitbook gitbook serve
+docker run -d -v "$PWD:/gitbook" -p 4000:4000 --name gitbook \
+  billryan/gitbook gitbook serve
 ```
 
