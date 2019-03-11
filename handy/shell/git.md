@@ -6,11 +6,10 @@
 git remote -v # 查看远端
 git remote set-url origin http://sogou.git # 设置远程源
 git push -u origin master # 推本地分支到远端
-# 拉取远程分支
-git checkout -b v0.0.1 remotes/origin/v0.0.1
-git checkout -t origin/v0.0.1
+# 增加远端
+git remote add liulin http://sogou.git # 设置远程源
+git push liulin master
 ```
-
 
 如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：
 ```sh
@@ -30,12 +29,32 @@ git merge upstream/master
 git push origin HEAD --force
 ```
 
+### 分支
+拉取远程分支
+```sh
+git checkout -b v0.0.1 remotes/origin/v0.0.1
+git checkout -t origin/v0.0.1
+```
+
+合并分支
+```sh
+git checkout master
+git merge <branchname>
+```
+
+删除分支
+```sh
+git branch -d <branchname>
+git push origin --delete <branchName> # 删除远端分支
+```
+
 ### 标签
 ```sh
 git tag # 查看标签
 git tag -a v1.1.0 084ac46 # 增加标签
 git show v1.1.0 # 查看标签
 git push origin v1.1.0 # 推到远端
+git push origin --delete tag <tagname> # 删除tag
 ```
 
 ### 打包导出
