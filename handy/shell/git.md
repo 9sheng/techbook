@@ -29,68 +29,46 @@ git merge upstream/master
 git push origin HEAD --force
 ```
 
-推送分支
+远端分支
 ```sh
-git push origin <local_branch>:<remote_branch>
+git push origin <local_branch>:<remote_branch> # 推送分支
+git push origin --all # 推送所有分支
+git push origin --delete <branch_name> # 删除远端分支
+git checkout -b v0.0.1 remotes/origin/v0.0.1 # 拉取远程分支
+git checkout -t origin/v0.0.1 # 拉取远程分支
 ```
 
-推送所有分支
+远端tag
 ```sh
-git push --all origin
+git push origin --tags # 推送所有 tag
+git push origin v1.1.0 # 推送 tag 到远端
+git push origin --delete tag <tag_name> # 删除远端tag
 ```
 
-推送tag
+### 本地
+分支
 ```sh
-git push origin --tags
+git checkout -b <branch_name> # 新建分支
+git merge <branch_name> # 合并分支
+git branch -d <branch_name> # 删除分支
 ```
 
-### 分支
-拉取远程分支
-```sh
-git checkout -b v0.0.1 remotes/origin/v0.0.1
-git checkout -t origin/v0.0.1
-```
-
-合并分支
-```sh
-git checkout master
-git merge <branchname>
-```
-
-删除分支
-```sh
-git branch -d <branchname>
-git push origin --delete <branchName> # 删除远端分支
-```
-
-### 标签
+标签
 ```sh
 git tag # 查看标签
 git tag -a v1.1.0 084ac46 # 增加标签
 git show v1.1.0 # 查看标签
-git push origin v1.1.0 # 推到远端
-git push origin --delete tag <tagname> # 删除tag
 ```
 
-### 打包导出
+当执行完 cherry-pick 以后，将会生成一个新的提交；这个新的提交的哈希值和原来的不同，但标识名一样；
+```sh
+git cherry-pick 38361a55
+```
+
+打包导出
 ```sh
 git archive --format zip -o site-$(git log --pretty=format:"%h" -1).zip HEAD
 git archive v0.1 | gzip > site.tgz
-```
-
-### 彩色显示
-```sh
-git config --global color.status auto
-git config --global color.diff auto
-git config --global color.branch auto
-git config --global color.interactive auto
-```
-
-### 非交互式
-```sh
-git config --global pager.branch false
-# git diff using no pager
-git config --global --replace-all core.pager "less -F -X"
 ```
 
 ### 恢复修改
@@ -119,10 +97,20 @@ git fetch origin
 git reset --hard origin/master
 ```
 
-### cherry pick
-当执行完 cherry-pick 以后，将会生成一个新的提交；这个新的提交的哈希值和原来的不同，但标识名一样；
+### 系统配置
+彩色显示
 ```sh
-git cherry-pick 38361a55
+git config --global color.status auto
+git config --global color.diff auto
+git config --global color.branch auto
+git config --global color.interactive auto
+```
+
+非交互式
+```sh
+git config --global pager.branch false
+# git diff using no pager
+git config --global --replace-all core.pager "less -F -X"
 ```
 
 ## 一般流程
