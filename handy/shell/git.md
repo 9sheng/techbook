@@ -29,6 +29,11 @@ git merge upstream/master
 git push origin HEAD --force
 ```
 
+推送分支
+```sh
+git push origin <local_branch>:<remote_branch>
+```
+
 推送所有分支
 ```sh
 git push --all origin
