@@ -73,10 +73,10 @@ chown -R ceph:ceph /data /data1 /data2 /data3
 rm -rf /data/* /data1/* /data2/* /data3/*
 
 sudo ceph-deploy --overwrite-conf osd prepare \
-  localhost_58_50:/data localhost_58_50:/data1 localhost_58_50:/data2 localhost_58_50:/data3
+  hostname:/data hostname:/data1 hostname:/data2 hostname:/data3
 
 sudo ceph-deploy osd activate \
-  localhost_58_50:/data localhost_58_50:/data1 localhost_58_50:/data2 localhost_58_50:/data3
+  hostname:/data hostname:/data1 hostname:/data2 hostname:/data3
 ```
 
 ### 重启 osd
