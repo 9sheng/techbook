@@ -11,7 +11,7 @@
 - **同步**：发起IO请求的线程不从正在调用的IO操作函数返回（即被阻塞，第2步过程中肯定阻塞）；
 - **异步**：发起IO请求的线程不等IO操作完成，就继续执行随后的代码，IO结果用其他方式通知发起IO请求的程序；
 
-如下图所示，对unix来讲：阻塞式I/O(默认)、非阻塞式I/O(nonblock)、I/O复用(select/poll/epoll)都属于同步I/O，因为它们在数据由内核空间复制回进程缓冲区时都是阻塞的(不能干别的事)。只有异步I/O模型(AIO)是符合异步I/O操作的含义的，即在1数据准备完成、2由内核空间拷贝回缓冲区后通知进程，在等待通知的这段时间里可以干别的事。
+如下图所示，对unix来讲：**阻塞式I/O(默认)、非阻塞式I/O(nonblock)、I/O复用(select/poll/epoll)都属于同步I/O** ，因为它们在数据由内核空间复制回进程缓冲区时都是阻塞的(不能干别的事)。只有异步I/O模型(AIO)是符合异步I/O操作的含义的，即在1数据准备完成、2由内核空间拷贝回缓冲区后通知进程，在等待通知的这段时间里可以干别的事。
 ![image](../../images/a24351a3-9567-44de-970f-e2c717cef4ea.png)
 
 ## 多路复用I/O模型
@@ -19,6 +19,7 @@
 
 I/O多路复用是指内核一旦发现进程指定的一个或者多个IO条件准备读取，它就通知该进程。 IO多路复用适用如下场合： 当客户处理多个描述符时（一般是交互式输入和网络套接口），必须使用I/O复用。
 
+两种I/O多路复用模式：Reactor 和 Proactor，Reactor模式采用同步 IO，而Proactor采用异步 IO，异步情况下(Proactor)，当回调handler时，表示IO操作已经完成；同步情况下(Reactor)，回调handler时，表示IO设备可以进行某个操作(can read or can write)。
 ### select
 ```c
 int select (int n, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout);
