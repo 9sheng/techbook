@@ -6,8 +6,8 @@
 
 运行：
 ```sh
-docker rm -f $(docker ps --filter "name=linlin-gitbook" --format "{{.ID}}")
-docker run -d -v "$PWD:/gitbook" -p 4000:4000 --name liulin-gitbook \
+docker rm -f $(docker ps --filter "name=techbook" --format "{{.ID}}")
+docker run -d -v "$PWD:/gitbook" -p 4000:4000 --name techbook \
   billryan/gitbook gitbook serve
 ```
 
