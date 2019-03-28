@@ -24,6 +24,11 @@
 ### 笔记
 * [算法](note/alg/README.md)
   * [常用平衡数据结构](note/alg/famous-balance-data-structure.md)
+* [架构](note/arch/README.md)
+  * [DDIA笔记](note/arch/note-on-ddia.md)
+  * [从0开始学架构1](note/arch/learn-arch-from-zero-1.md)
+  * [从0开始学架构2](note/arch/learn-arch-from-zero-2.md)
+  * [从0开始学架构3](note/arch/learn-arch-from-zero-3.md)
 * [cpp](note/cpp/README.md)
   * [optimizing cpp笔记](note/cpp/optimizing-cpp.md)
   * [datetime函数](note/cpp/datetime.md)

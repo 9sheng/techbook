@@ -30,17 +30,20 @@ set -euo pipefail
 SIZE=200 #GB
 
 # Change file size
+echo "================================"
 datafile=$(docker info | grep 'Data loop file' | awk '{print $NF}')
 ls -lh $datafile
 secnum=$(echo "$SIZE * 1024 * 1024 * 1024" | bc)
 truncate -s $secnum $datafile
 ls -lh $datafile
 
+echo "================================"
 # Reload data loop device
 blockdev --getsize64 /dev/loop0
 losetup -c /dev/loop0
 blockdev --getsize64 /dev/loop0
 
+echo "================================"
 poolname=$(dmsetup status | grep pool | awk -F': ' '{print $1}')
 poolinfo=$(dmsetup table $poolname)
 newpoolinfo=$(echo $poolinfo | awk -v s=$SIZE '{
@@ -53,7 +56,7 @@ newpoolinfo=$(echo $poolinfo | awk -v s=$SIZE '{
   printf("%s", $NF)
 }')
 
-echo "Pool Info: $poolinfo"
+echo "Old Pool Info: $poolinfo"
 echo "New Pool Info: $newpoolinfo"
 
 dmsetup suspend "$poolname"
