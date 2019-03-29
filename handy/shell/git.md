@@ -46,6 +46,13 @@ git push origin --delete tag <tag_name> # 删除远端tag
 ```
 
 ### 本地
+```sh
+git add files # 把当前文件放入暂存区
+git reset -- files # 撤销最后一次 git add files
+git commit # 给暂存区域生成快照并提交
+git checkout -- files # 把文件从暂存区域复制到工作目录，丢弃本地修改
+```
+
 分支
 ```sh
 git checkout -b <branch_name> # 新建分支
@@ -185,4 +192,4 @@ git push
 ```
 
 ## 资料
-- (图解git](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
+- [图解git](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
