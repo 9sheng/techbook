@@ -30,6 +30,7 @@
 
 # 第四章
 常用的文本格式：JSON XML CSV；二进制格式：Thrift, Protocol Buffers, and Avro
+
 web 服务有两种流行的方法： REST、SOAP。
 - REST emphasizes simple data formats, using URLs for identifying resources and using HTTP features for cache control, authentication, and content type negotiation
 - SOAP is an XML-based protocol for making network API requests
@@ -48,7 +49,7 @@ Finagle 和 Rest 使用 futures(promises)  来封装可能出错的异步调用�
 - Leaderless replication：客户端将写请求发送给几个节点，从几个节点中同时读数据，并判断修正有过期数据的节点
   - quorum read/write
   - sloppy quorum：读写仍有r/w个回复，但里面可能包括没有包含相应数据的节点
- 
+
 关于一致性
 - 强一致性？？？
 - Read-after-write consistency：用户应该总能看到自己之前提交过的数据
@@ -106,41 +107,41 @@ partition 也叫 shard，目标是将数据和查询平均地分不到多台机�
 - Phantom reads：事务读取符合某些搜索条件的对象，另一个客户写入了影响搜索结果的数据。Snapshot isolation 避免了这个，但是对于write skew 下的phantoms需要特殊处理，如index-range locks.
 
 # 第八章
-网络拥塞、排队、延迟总会发生
-使用公网上的NTP服务，最好的延迟时间精确度是10万之一秒  
-Java GC通常会停止整个线程
-大多数拜占庭算法要求2/3的节点存活
-通常UDP TCP的校验能检查出错误来，但有时也不行
+- 网络拥塞、排队、延迟总会发生
+- 使用公网上的NTP服务，最好的延迟时间精确度是10万之一秒
+- Java GC通常会停止整个线程
+- 大多数拜占庭算法要求2/3的节点存活
+- 通常UDP TCP的校验能检查出错误来，但有时也不行
 
 # 第九章
-evnentual consistency：意味着如果停止写数据库，一段时间之后，所有的读请求都返回同样的结果
-分布式一致性主要是在有延迟、故障情况下协调多个副本的状态问题
-This is the idea behind linearizability(also known as atomic consistency, strong consistency, immediate consistency, or external consistency). 
-Serializability：可序列化，保证事务的执行像按某种顺序一个一个执行一样
-Linearizability：是一个最近的关于读写一个寄存器的保证，他没有把一组操作当做事务处理，避免不了 write skew，本质上意味着只有一份数据，其上的所有的操作都是原子的
-serial execution和2PL 都是 Linearizability，SSI 不是 Linearizability 的
-CAP更好的理解，当网络故障发生的时候，只能选择 linearizability 或者 total availability；或者说，当发生Partitioned时候，只能选择 Consistent 或者Available 
-放弃 linearizability 的原因是 performanc，而不是fault tolerance
- a total order and a partial order：
-- 在 Linearizability 系统中，是total order的，所有的操作都有序
-- Causality，是partial order的，某些操作是可以并行的
-可以证明 linearizable compare-and-set register 和 total order broadcast 和 consensus 是等价的
-补偿性事务
-2PC：在一个分布式数据库中提供了 atomic commit；2PL 提供了 Serialization Isolation；2PC 有故障时只能等待协调者恢复
-(Termination is a liveness property, whereas the other three are safety properties
-The best-known fault-tolerant consensus algorithms are Viewstamped Replication (VSR)  Paxos， Raft and Zab
+- evnentual consistency：意味着如果停止写数据库，一段时间之后，所有的读请求都返回同样的结果
+- 分布式一致性主要是在有延迟、故障情况下协调多个副本的状态问题
+- This is the idea behind linearizability(also known as atomic consistency, strong consistency, immediate consistency, or external consistency).
+- Serializability：可序列化，保证事务的执行像按某种顺序一个一个执行一样
+- Linearizability：是一个最近的关于读写一个寄存器的保证，他没有把一组操作当做事务处理，避免不了 write skew，本质上意味着只有一份数据，其上的所有的操作都是原子的
+- serial execution和2PL 都是 Linearizability，SSI 不是 Linearizability 的
+- CAP更好的理解，当网络故障发生的时候，只能选择 linearizability 或者 total availability；或者说，当发生Partitioned时候，只能选择 Consistent 或者Available
+- 放弃 linearizability 的原因是 performanc，而不是fault tolerance
+- a total order and a partial order：
+  - 在 Linearizability 系统中，是total order的，所有的操作都有序
+  - Causality，是partial order的，某些操作是可以并行的
+- 可以证明 linearizable compare-and-set register 和 total order broadcast 和 consensus 是等价的
+- 补偿性事务
+- 2PC：在一个分布式数据库中提供了 atomic commit；2PL 提供了 Serialization Isolation；2PC 有故障时只能等待协调者恢复
+- Termination is a liveness property, whereas the other three are safety properties
+- The best-known fault-tolerant consensus algorithms are Viewstamped Replication (VSR)  Paxos， Raft and Zab
 
 # 第十章
-shuffle 洗牌
-sort-merge join
+- shuffle 洗牌
+- sort-merge join
 
 # 第十一章
-如果发送者的发送速度大于消费者的消费速度，系统可以丢掉消息或者在队列里缓存消息或者使用backpressure（流量控制），Unix pipes and TCP use backpressure
-event sourcing 和 change data capture 最大的缺点是他们的消费者通常都是异步的
+- 如果发送者的发送速度大于消费者的消费速度，系统可以丢掉消息或者在队列里缓存消息或者使用backpressure（流量控制），Unix pipes and TCP use backpressure
+- event sourcing 和 change data capture 最大的缺点是他们的消费者通常都是异步的
 
 # 第十二章
-在分布式事务协议的本质上，我认为log-based derived data 是最有前途的集成系统的方法
-通常，建立一个完全有序的日志，需要所有的事件都经由一个leader来处理，如果吞吐量超过一台机器的处理量，需要使用多台机器分区处理
-当数据跨过各种技术边界时，我认为基于 dempotent writes 的 asynchronous event log是一个更具鲁棒性和实用性的方法
-系统从 request/ response 交互到 publish/subscribe dataflow
-我们假设数据写入磁盘在fsync后不会丢失，内存中的数据不会损坏，CPU总会返回正确的执行结果
+- 在分布式事务协议的本质上，我认为log-based derived data 是最有前途的集成系统的方法
+- 通常，建立一个完全有序的日志，需要所有的事件都经由一个leader来处理，如果吞吐量超过一台机器的处理量，需要使用多台机器分区处理
+- 当数据跨过各种技术边界时，我认为基于 dempotent writes 的 asynchronous event log是一个更具鲁棒性和实用性的方法
+- 系统从 request/ response 交互到 publish/subscribe dataflow
+- 我们假设数据写入磁盘在fsync后不会丢失，内存中的数据不会损坏，CPU总会返回正确的执行结果

@@ -26,6 +26,7 @@
   * [常用平衡数据结构](note/alg/famous-balance-data-structure.md)
 * [架构](note/arch/README.md)
   * [DDIA笔记](note/arch/note-on-ddia.md)
+  * [关于一致性](note/arch/about-consistency.md)
   * [从0开始学架构1](note/arch/learn-arch-from-zero-1.md)
   * [从0开始学架构2](note/arch/learn-arch-from-zero-2.md)
   * [从0开始学架构3](note/arch/learn-arch-from-zero-3.md)
