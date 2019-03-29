@@ -47,6 +47,11 @@ https://kubernetes.io/docs/reference/kubectl/jsonpath/
 ```sh
 kubectl patch authorizationactions -p '{"metadata":{"finalizers":[]}}'
 ```
+或者
+```sh
+kubectl patch authorizationactions --type json \
+  -p='[{"op":"remove","path":"/metadata/finalizers"}]'
+```
 
 查询 ownerReferences
 ```sh

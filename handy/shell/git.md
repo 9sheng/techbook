@@ -70,6 +70,28 @@ git cherry-pick 38361a55
 git archive --format zip -o site-$(git log --pretty=format:"%h" -1).zip HEAD
 git archive v0.1 | gzip > site.tgz
 ```
+### diff
+git diff 对比两个文件修改的记录
+
+```sh
+# 比较工作区和暂存区
+git diff filename
+
+# 比较暂存区与最新本地版本库
+git diff --cached filename
+
+# 比较工作区和最新版本
+git diff HEAD filename
+
+# 比较工作区与指定的 commit-id 的差异
+git diff commit-id  filename
+
+# 比较暂存区与指定 commit-id 的差异
+git diff --cached commit-id filename
+
+# 比较两个 commit-id 的差异
+git diff commit-id commit-id
+```
 
 ### 恢复修改
 本地修改了许多文件，其中有些是新增的，因为开发需要这些都不要了，想要丢弃掉，可以使用如下命令：
@@ -161,3 +183,6 @@ git rebase --continue
 ```sh
 git push
 ```
+
+## 资料
+- (图解git](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
