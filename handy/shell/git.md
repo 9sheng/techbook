@@ -142,6 +142,15 @@ git config --global pager.branch false
 git config --global --replace-all core.pager "less -F -X"
 ```
 
+### 设置
+```sh
+git config --global user.name "liulin209544"
+git config --global user.email "liulin209544@sogou-inc.com"
+
+git config --local user.name "liulin209544"
+git config --local user.email "liulin209544@sogou-inc.com"
+```
+
 ## 一般流程
 假设需要开发某个功能，或者 fix 某个 bug，详细如下：
 
