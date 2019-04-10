@@ -22,5 +22,8 @@ docker export containID > filename
 docker import filename [newname]
 ```
 
-## enlarge docker pool
+## docker pool 扩容
 [enlarge-docker-pool.sh](./enlarge-docker-pool.sh)
+
+## 清除废旧 image
+[cleanup-unused-images.sh](./cleanup-unused-images.sh)
