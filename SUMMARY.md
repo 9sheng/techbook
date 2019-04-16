@@ -31,6 +31,8 @@
   * [从0开始学架构2](note/arch/learn-arch-from-zero-2.md)
   * [从0开始学架构3](note/arch/learn-arch-from-zero-3.md)
   * [从0开始学架构4](note/arch/learn-arch-from-zero-4.md)
+  * [从0开始学架构5](note/arch/learn-arch-from-zero-5.md)
+  * [从0开始学架构6](note/arch/learn-arch-from-zero-6.md)
 * [cpp](note/cpp/README.md)
   * [optimizing cpp笔记](note/cpp/optimizing-cpp.md)
   * [datetime函数](note/cpp/datetime.md)
