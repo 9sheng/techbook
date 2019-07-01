@@ -26,7 +26,7 @@
   - 解决传统 IT 行业系统重复建设和扩展效率低下的问题，SOA是为了将不同的系统整合起来
   - 三个关键概念
     - 服务
-    - ESB（Enterprise Service Bus）,SOA 用ESB来屏蔽异构系统对外提供各种不同接口方式
+    - ESB（Enterprise Service Bus），SOA 用 ESB 来屏蔽异构系统对外提供各种不同接口方式
     - 松耦合
 - 缺点：协议转换工作量和复杂度都很大，性能问题
 
