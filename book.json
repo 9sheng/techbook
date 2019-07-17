@@ -18,6 +18,7 @@
         "-livereload",
         "include-codeblock",
         "ace",
+        "atoc",
         "prism",
         "prism-themes",
         "splitter",
@@ -48,6 +49,10 @@
         },
         "sectionx": {
             "tag": "b"
+        },
+        "atoc": {
+            "addClass": true,
+            "className": "atoc"
         }
     }
 }
