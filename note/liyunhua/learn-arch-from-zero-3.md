@@ -1,3 +1,6 @@
+<!-- toc -->
+
+# 目录
 ## 22 必须知道的 CAP 理论
 http://robertgreiner.com/2014/08/cap-theorem-revisited/
 - Consistency - A read is guaranteed to return the most recent write for a given client.
